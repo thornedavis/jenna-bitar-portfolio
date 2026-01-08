@@ -1,0 +1,55 @@
+.accordion {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.accordion:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--foreground);
+    text-align: left;
+}
+
+.header:hover {
+    opacity: 0.6;
+}
+
+.title {
+    font-weight: 400;
+}
+
+.icon {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.contentOpen {
+    max-height: 800px;
+}
+
+.contentInner {
+    padding-bottom: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--foreground);
+    opacity: 0.85;
+    white-space: pre-wrap;
+}

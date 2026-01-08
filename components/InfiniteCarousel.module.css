@@ -1,0 +1,64 @@
+.section {
+    margin-bottom: 4rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--foreground);
+}
+
+.arrows {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    color: var(--foreground);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.carousel {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollContent {
+    display: flex;
+    gap: 2.5rem;
+    padding: 0 4rem;
+    width: max-content;
+}
+
+.cardWrapper {
+    flex-shrink: 0;
+    width: 280px;
+}

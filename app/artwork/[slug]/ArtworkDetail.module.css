@@ -1,0 +1,153 @@
+.page {
+    padding: calc(80px + 1.5rem) 6rem 1.5rem 6rem;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.backLink {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--foreground);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.backLink:hover {
+    opacity: 1;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 40% 55%;
+    gap: 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.imageSection {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.infoSection {
+    padding-top: 0;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+/* Hide scrollbar but keep functionality */
+.infoSection::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+.meta {
+    margin-bottom: 1.25rem;
+}
+
+.meta p {
+    margin: 0.1rem 0;
+    font-size: 0.85rem;
+    color: var(--foreground);
+    line-height: 1.5;
+}
+
+.year {
+    font-weight: 400;
+}
+
+.dimensions,
+.medium {
+    font-weight: 400;
+}
+
+.description {
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.description p {
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--foreground);
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+.accordions {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.requestButton {
+    display: inline-block;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    font-family: inherit;
+    color: var(--foreground);
+    margin-top: 0.25rem;
+}
+
+.requestButton:hover {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .page {
+        padding: 1.5rem 4rem;
+    }
+
+    .container {
+        grid-template-columns: 45% 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    .page {
+        padding: 1.5rem 2rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .imageSection {
+        position: relative;
+        top: 0;
+    }
+
+    .infoSection {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+}

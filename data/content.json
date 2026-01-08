@@ -1,0 +1,61 @@
+{
+    "artist": {
+        "name": "Jenna Bitar",
+        "tagline": "Contemporary Artist",
+        "shortBio": "Jenna Bitar is a contemporary artist whose work explores the intersection of color, texture, and emotion through various mediums including oil painting, acrylics, and mixed media.",
+        "fullBio": "Jenna Bitar (born 1990) is a contemporary artist whose intuitive works feature layered compositions that blend abstraction with representation. Her practice explores the relationship between color, texture, and emotional resonance, creating works that invite contemplation and connection.\n\nWith an ever-evolving palette and process, Jenna enjoys experimenting with new materials and techniques, allowing the canvas to become a space for presence and poetic tension. Her work has been featured in galleries across the region and is held in private collections worldwide.",
+        "profileImage": "/images/profile.jpg"
+    },
+    "cv": {
+        "education": [
+            {
+                "year": "2012",
+                "title": "Bachelor of Fine Arts",
+                "institution": "School of Visual Arts, New York"
+            }
+        ],
+        "soloExhibitions": [
+            {
+                "year": "2024",
+                "title": "New Horizons",
+                "venue": "Gallery One, New York"
+            },
+            {
+                "year": "2023",
+                "title": "Inner Landscapes",
+                "venue": "Art Space, Los Angeles"
+            }
+        ],
+        "groupExhibitions": [
+            {
+                "year": "2024",
+                "title": "Collective Vision",
+                "venue": "Modern Art Center"
+            },
+            {
+                "year": "2023",
+                "title": "Emerging Artists",
+                "venue": "City Gallery"
+            }
+        ],
+        "awards": [
+            {
+                "year": "2024",
+                "title": "Emerging Artist Grant"
+            }
+        ],
+        "press": [
+            {
+                "year": "2024",
+                "title": "Artist Spotlight: Jenna Bitar",
+                "publication": "Art Magazine",
+                "url": "#"
+            }
+        ]
+    },
+    "contact": {
+        "email": "hello@jennabitar.com",
+        "instagram": "@jennabitar",
+        "instagramUrl": "https://instagram.com/jennabitar"
+    }
+}

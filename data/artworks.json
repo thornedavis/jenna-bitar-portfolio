@@ -1,0 +1,238 @@
+{
+  "series": [
+    {
+      "id": "abstract-series",
+      "name": "Abstract Series",
+      "artworks": [
+        {
+          "id": "abstract-1",
+          "title": "Untitled I",
+          "image": "/uploads/placeholder-1.jpg",
+          "dimensions": "90 x 120 cm",
+          "medium": "Oil on canvas",
+          "year": "2024",
+          "available": true
+        },
+        {
+          "id": "abstract-2",
+          "title": "Untitled II",
+          "image": "/uploads/placeholder-2.jpg",
+          "dimensions": "60 x 90 cm",
+          "medium": "Acrylic on canvas",
+          "year": "2024",
+          "available": true
+        },
+        {
+          "id": "abstract-3",
+          "title": "Untitled III",
+          "image": "/uploads/placeholder-3.jpg",
+          "dimensions": "120 x 150 cm",
+          "medium": "Mixed media",
+          "year": "2023",
+          "available": false
+        },
+        {
+          "id": "abstract-4",
+          "title": "Untitled IV",
+          "image": "/uploads/placeholder-4.jpg",
+          "dimensions": "75 x 100 cm",
+          "medium": "Oil on canvas",
+          "year": "2023",
+          "available": true
+        },
+        {
+          "id": "abstract-5",
+          "title": "Untitled V",
+          "image": "/uploads/placeholder-5.jpg",
+          "dimensions": "90 x 120 cm",
+          "medium": "Acrylic on canvas",
+          "year": "2023",
+          "available": true
+        },
+        {
+          "id": "abstract-6",
+          "title": "Untitled VI",
+          "image": "/uploads/placeholder-6.jpg",
+          "dimensions": "60 x 75 cm",
+          "medium": "Mixed media",
+          "year": "2022",
+          "available": true
+        },
+        {
+          "id": "abstract-7",
+          "title": "Untitled VII",
+          "image": "/uploads/placeholder-7.jpg",
+          "dimensions": "100 x 130 cm",
+          "medium": "Oil on linen",
+          "year": "2022",
+          "available": false
+        },
+        {
+          "id": "abstract-8",
+          "title": "Untitled VIII",
+          "image": "/uploads/placeholder-8.jpg",
+          "dimensions": "90 x 120 cm",
+          "medium": "Acrylic on canvas",
+          "year": "2022",
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "landscape-series",
+      "name": "Landscape Series",
+      "artworks": [
+        {
+          "id": "landscape-1",
+          "title": "Morning Light",
+          "image": "/uploads/placeholder-1.jpg",
+          "dimensions": "75 x 100 cm",
+          "medium": "Oil on canvas",
+          "year": "2023",
+          "available": true
+        },
+        {
+          "id": "landscape-2",
+          "title": "Evening Glow",
+          "image": "/uploads/placeholder-2.jpg",
+          "dimensions": "75 x 100 cm",
+          "medium": "Oil on canvas",
+          "year": "2023",
+          "available": true
+        },
+        {
+          "id": "landscape-3",
+          "title": "Golden Hour",
+          "image": "/uploads/placeholder-3.jpg",
+          "dimensions": "90 x 120 cm",
+          "medium": "Oil on canvas",
+          "year": "2023",
+          "available": true
+        },
+        {
+          "id": "landscape-4",
+          "title": "Misty Valley",
+          "image": "/uploads/placeholder-4.jpg",
+          "dimensions": "60 x 90 cm",
+          "medium": "Acrylic on canvas",
+          "year": "2022",
+          "available": false
+        },
+        {
+          "id": "landscape-5",
+          "title": "Autumn Fields",
+          "image": "/uploads/placeholder-5.jpg",
+          "dimensions": "75 x 100 cm",
+          "medium": "Oil on canvas",
+          "year": "2022",
+          "available": true
+        },
+        {
+          "id": "landscape-6",
+          "title": "Winter Silence",
+          "image": "/uploads/placeholder-6.jpg",
+          "dimensions": "90 x 120 cm",
+          "medium": "Acrylic on canvas",
+          "year": "2022",
+          "available": true
+        },
+        {
+          "id": "landscape-7",
+          "title": "Spring Bloom",
+          "image": "/uploads/placeholder-7.jpg",
+          "dimensions": "60 x 75 cm",
+          "medium": "Oil on linen",
+          "year": "2021",
+          "available": true
+        },
+        {
+          "id": "landscape-8",
+          "title": "Summer Breeze",
+          "image": "/uploads/placeholder-8.jpg",
+          "dimensions": "75 x 100 cm",
+          "medium": "Oil on canvas",
+          "year": "2021",
+          "available": false
+        }
+      ]
+    },
+    {
+      "id": "portrait-series",
+      "name": "Portrait Series",
+      "artworks": [
+        {
+          "id": "portrait-1",
+          "title": "Reflection",
+          "image": "/uploads/placeholder-1.jpg",
+          "dimensions": "60 x 75 cm",
+          "medium": "Oil on linen",
+          "year": "2022",
+          "available": true
+        },
+        {
+          "id": "portrait-2",
+          "title": "Contemplation",
+          "image": "/uploads/placeholder-2.jpg",
+          "dimensions": "50 x 60 cm",
+          "medium": "Oil on canvas",
+          "year": "2022",
+          "available": true
+        },
+        {
+          "id": "portrait-3",
+          "title": "Solitude",
+          "image": "/uploads/placeholder-3.jpg",
+          "dimensions": "60 x 75 cm",
+          "medium": "Oil on linen",
+          "year": "2021",
+          "available": false
+        },
+        {
+          "id": "portrait-4",
+          "title": "Presence",
+          "image": "/uploads/placeholder-4.jpg",
+          "dimensions": "75 x 90 cm",
+          "medium": "Acrylic on canvas",
+          "year": "2021",
+          "available": true
+        },
+        {
+          "id": "portrait-5",
+          "title": "Emergence",
+          "image": "/uploads/placeholder-5.jpg",
+          "dimensions": "50 x 60 cm",
+          "medium": "Oil on canvas",
+          "year": "2021",
+          "available": true
+        },
+        {
+          "id": "portrait-6",
+          "title": "Stillness",
+          "image": "/uploads/placeholder-6.jpg",
+          "dimensions": "60 x 75 cm",
+          "medium": "Mixed media",
+          "year": "2020",
+          "available": true
+        },
+        {
+          "id": "portrait-7",
+          "title": "Whisper",
+          "image": "/uploads/placeholder-7.jpg",
+          "dimensions": "45 x 60 cm",
+          "medium": "Oil on linen",
+          "year": "2020",
+          "available": false
+        },
+        {
+          "id": "portrait-8",
+          "title": "Echoes",
+          "image": "/uploads/placeholder-8.jpg",
+          "dimensions": "60 x 75 cm",
+          "medium": "Oil on canvas",
+          "year": "2020",
+          "available": true
+        }
+      ]
+    }
+  ]
+}

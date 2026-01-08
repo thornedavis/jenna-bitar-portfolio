@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jenna Bitar - Artist Portfolio
+
+A modern artist portfolio website built with Next.js and Sanity CMS.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set Up Sanity CMS
+
+Create a Sanity project:
+
+1. Go to [sanity.io/manage](https://www.sanity.io/manage)
+2. Create a new project (or use an existing one)
+3. Get your **Project ID** from the project settings
+
+Create a `.env.local` file in the project root:
+
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+```
+
+### 3. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Content Management
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Access the Sanity Studio at [http://localhost:3000/admin](http://localhost:3000/admin) to:
 
-## Learn More
+- **Collections**: Create and manage artwork series/collections
+- **Artworks**: Add artworks with images, dimensions, medium, year, and availability
+- **Site Settings**: Update artist info, bio, contact details, and CV
 
-To learn more about Next.js, take a look at the following resources:
+### Adding Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Go to `/admin` and log in with your Sanity account
+2. Create collections first (e.g., "Abstract Series", "Landscape Series")
+3. Add artworks and assign them to collections
+4. Update Site Settings with artist information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Deploy to [Vercel](https://vercel.com) for the best experience:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub
+2. Import the project on Vercel
+3. Add the environment variables in Vercel's project settings
+4. Deploy!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After deployment, access the studio at `yourdomain.com/admin`.
+
+## Tech Stack
+
+- **Framework**: Next.js 16
+- **CMS**: Sanity
+- **Styling**: CSS
+- **Deployment**: Vercel (recommended)

@@ -1,0 +1,224 @@
+/* Contact Page - Redesigned Layout */
+
+.contactContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - var(--nav-height) - 120px);
+    padding: 0 4rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Left side - Form Section */
+.formSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 4rem;
+    max-width: 500px;
+}
+
+.title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--secondary);
+    margin-bottom: 2.5rem;
+}
+
+/* Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formField {
+    border-bottom: 1px solid var(--foreground);
+    padding-top: 1rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--secondary);
+    margin-bottom: 0.25rem;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 0.5rem 0 1rem 0;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    color: var(--foreground);
+    font-family: inherit;
+    outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--foreground);
+    opacity: 1;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    background: transparent;
+}
+
+/* Override browser autofill styling */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active,
+.textarea:-webkit-autofill,
+.textarea:-webkit-autofill:hover,
+.textarea:-webkit-autofill:focus,
+.textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--background) inset !important;
+    -webkit-text-fill-color: var(--foreground) !important;
+    background-color: transparent !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Ensure no background on any state */
+.input,
+.input:hover,
+.input:focus,
+.input:active,
+.textarea,
+.textarea:hover,
+.textarea:focus,
+.textarea:active {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.textarea {
+    resize: none;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.submitBtn {
+    display: inline-block;
+    padding: 1.25rem 0;
+    background: transparent;
+    color: var(--foreground);
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-align: left;
+    margin-top: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.submitBtn:hover {
+    opacity: 0.7;
+}
+
+.submitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.successMessage {
+    color: #4a5d4a;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Right side - Image Section */
+.imageSection {
+    display: flex;
+    align-items: stretch;
+    padding: 2rem 0;
+}
+
+.contactImage {
+    flex: 1;
+    background: #a8a8a8;
+    min-height: 500px;
+}
+
+/* Footer Contact Info */
+.contactFooter {
+    padding: 3rem 4rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.contactLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contactLink {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--foreground);
+    transition: opacity 0.3s ease;
+}
+
+.contactLink:hover {
+    opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .contactContainer {
+        grid-template-columns: 1fr;
+        padding: 0 2rem;
+        gap: 3rem;
+    }
+
+    .formSection {
+        padding-right: 0;
+        max-width: 100%;
+        order: 1;
+    }
+
+    .imageSection {
+        order: 2;
+        padding: 0;
+    }
+
+    .contactImage {
+        min-height: 400px;
+    }
+
+    .contactFooter {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactContainer {
+        padding: 0 1.5rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .contactImage {
+        min-height: 300px;
+    }
+}
