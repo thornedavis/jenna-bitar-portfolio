@@ -149,23 +149,6 @@ function ContactForm() {
                     <div className={styles.contactImage}></div>
                 </div>
             </div>
-
-            {/* Footer section with contact info */}
-            <div className={styles.contactFooter}>
-                <div className={styles.contactLinks}>
-                    <a href={`mailto:${contact.email}`} className={styles.contactLink}>
-                        {contact.email.toUpperCase()}
-                    </a>
-                    <a
-                        href={contact.instagramUrl}
-                        className={styles.contactLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {contact.instagram.toUpperCase()}
-                    </a>
-                </div>
-            </div>
         </div>
     );
 }

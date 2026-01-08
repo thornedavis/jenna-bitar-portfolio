@@ -34,8 +34,8 @@ export default function Navigation() {
                     <Image
                         src="/images/jenna-bitar-art-logo.webp"
                         alt="Jenna Bitar"
-                        width={120}
-                        height={40}
+                        width={160}
+                        height={53}
                         priority
                     />
                 </Link>
@@ -88,20 +88,14 @@ export default function Navigation() {
                     </div>
                 </div>
 
-                <div className="menu-footer">
-                    <div className="menu-footer-left">
+                <div className="footer">
+                    <div className="footer-links">
                         <a href="mailto:hello@jennabitar.com">hello@jennabitar.com</a>
-                        <a href="https://instagram.com/jennabitar" target="_blank" rel="noopener noreferrer">@jenna_bitar</a>
+                        <a href="https://instagram.com/jennabitar" target="_blank" rel="noopener noreferrer">
+                            @jennabitar
+                        </a>
                     </div>
-                    <div className="menu-footer-center">
-                        <Image
-                            src="/images/jenna-bitar-art-logo.webp"
-                            alt="Jenna Bitar"
-                            width={80}
-                            height={30}
-                        />
-                    </div>
-                    <div className="menu-footer-right">
+                    <div>
                         <span>© Jenna Bitar {new Date().getFullYear()}</span>
                     </div>
                 </div>

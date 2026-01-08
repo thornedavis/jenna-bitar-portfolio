@@ -8,32 +8,43 @@ export const metadata = {
 export default function About() {
     const { artist, cv } = contentData;
 
+    // Split bio into two parts for staggered layout
+    const bioLines = artist.fullBio.split('\n\n');
+    const firstBioPart = bioLines.slice(0, Math.ceil(bioLines.length / 2)).join('\n\n');
+    const secondBioPart = bioLines.slice(Math.ceil(bioLines.length / 2)).join('\n\n');
+
     return (
         <div className="page">
             <div className="container">
                 <h1 style={{ marginBottom: '3rem' }}>About</h1>
 
+                {/* First section: Image Left, Text Right */}
                 <div className="about-grid">
                     <div className="about-image">
-                        {artist.profileImage ? (
-                            <img src={artist.profileImage} alt={artist.name} />
-                        ) : (
-                            <div style={{
-                                width: '100%',
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: '#999',
-                                borderRadius: '4px'
-                            }}>
-                                Artist Photo
-                            </div>
-                        )}
+                        <div style={{
+                            width: '100%',
+                            height: '100%',
+                            minHeight: '400px',
+                            background: '#a8a8a8',
+                        }} />
                     </div>
                     <div className="about-bio">
-                        <p style={{ whiteSpace: 'pre-line' }}>{artist.fullBio}</p>
+                        <p style={{ whiteSpace: 'pre-line' }}>{firstBioPart}</p>
+                    </div>
+                </div>
+
+                {/* Second section: Text Left, Image Right */}
+                <div className="about-grid" style={{ marginTop: '4rem' }}>
+                    <div className="about-bio">
+                        <p style={{ whiteSpace: 'pre-line' }}>{secondBioPart}</p>
+                    </div>
+                    <div className="about-image">
+                        <div style={{
+                            width: '100%',
+                            height: '100%',
+                            minHeight: '400px',
+                            background: '#a8a8a8',
+                        }} />
                     </div>
                 </div>
 
