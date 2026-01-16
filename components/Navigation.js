@@ -9,6 +9,11 @@ export default function Navigation() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    // Don't render navigation on admin pages - Sanity Studio needs full viewport
+    if (pathname?.startsWith('/admin')) {
+        return null;
+    }
+
     const menuLinks = [
         { href: '/', label: 'Home' },
         { href: '/gallery', label: 'Gallery' },

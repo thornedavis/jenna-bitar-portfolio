@@ -29,6 +29,19 @@ export default function HomeClient({ collections, settings }) {
     return (
         <>
             <section className="hero">
+                {/* Background Video */}
+                <video
+                    className="hero-video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster="/images/hero-poster.jpg"
+                >
+                    <source src="/video/jenna-bitar-art-hero-video.mp4" type="video/mp4" />
+                </video>
+                <div className="hero-overlay" />
+
                 <div className="container">
                     <h1 className="hero-title">{settings?.artistName || 'Artist Name'}</h1>
                     <p className="hero-subtitle">{settings?.shortBio || ''}</p>
@@ -36,12 +49,13 @@ export default function HomeClient({ collections, settings }) {
                         display: 'inline-block',
                         marginTop: '2rem',
                         padding: '1rem 2rem',
-                        border: '1px solid var(--foreground)',
+                        border: '1px solid #fff',
                         borderRadius: '4px',
                         fontSize: '0.9rem',
                         textTransform: 'uppercase',
                         letterSpacing: '0.1em',
-                        transition: 'all 0.3s ease'
+                        transition: 'all 0.3s ease',
+                        color: '#fff'
                     }}>
                         View Gallery
                     </Link>
