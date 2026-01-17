@@ -29,7 +29,7 @@ export default function ImageCarousel({ images }) {
 
     const getImageUrl = (image) => {
         if (image?.asset) {
-            return urlFor(image).width(800).height(1000).url();
+            return urlFor(image).width(800).auto('format').quality(85).url();
         }
         return image;
     };

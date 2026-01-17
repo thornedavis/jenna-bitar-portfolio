@@ -1,16 +1,20 @@
 .page {
-    padding: calc(80px + 1.5rem) 6rem 1.5rem 6rem;
-    height: 100vh;
-    overflow: hidden;
+    padding: calc(80px + 1.5rem) 6rem 3rem 6rem;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
 .backLink {
-    display: inline-block;
+    display: block;
     font-size: 0.85rem;
+    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     color: var(--foreground);
     text-decoration: none;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--foreground);
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
@@ -29,9 +33,10 @@
 }
 
 .imageSection {
-    position: sticky;
-    top: 2rem;
-    height: fit-content;
+    position: relative;
+    max-height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
 }
 
 .infoSection {
@@ -101,12 +106,12 @@
     background: transparent;
     border: none;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
     transition: opacity 0.3s ease;
-    font-family: inherit;
+    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--foreground);
     margin-top: 0.25rem;
 }

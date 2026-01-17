@@ -75,7 +75,7 @@ export default function ArtworkDetailClient({ artwork }) {
                         className={styles.requestButton}
                         onClick={handleRequest}
                     >
-                        REQUEST
+                        REQUEST →
                     </button>
                 </div>
             </div>

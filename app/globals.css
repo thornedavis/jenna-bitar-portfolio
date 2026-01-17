@@ -100,10 +100,12 @@ img {
 
 /* Text Link - reusable class for inline text links */
 .text-link {
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
   color: inherit;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   transition: color var(--transition);
 }
 
@@ -179,6 +181,7 @@ p {
 
 .nav-menu-btn,
 .nav-contact-btn {
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -247,6 +250,7 @@ p {
 }
 
 .menu-link {
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 300;
   text-transform: uppercase;
