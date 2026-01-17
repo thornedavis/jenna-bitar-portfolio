@@ -16,7 +16,8 @@ export default function ArtworkCard({ artwork, onClick }) {
     // Handle both Sanity images and legacy local images
     const getImageUrl = () => {
         if (artwork.image?.asset) {
-            return urlFor(artwork.image).width(600).height(800).url();
+            // Use auto format and quality for optimal loading, no fixed dimensions
+            return urlFor(artwork.image).width(600).auto('format').quality(85).url();
         }
         return artwork.image;
     };

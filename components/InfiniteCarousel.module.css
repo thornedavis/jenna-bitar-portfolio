@@ -53,12 +53,13 @@
 
 .scrollContent {
     display: flex;
-    gap: 2.5rem;
+    gap: 6rem;
     padding: 0 4rem;
     width: max-content;
 }
 
 .cardWrapper {
     flex-shrink: 0;
-    width: 280px;
+    width: auto;
+    padding: 1.5rem;
 }

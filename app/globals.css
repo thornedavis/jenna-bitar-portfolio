@@ -1,5 +1,5 @@
 :root {
-  --background: #D3CBBE;
+  --background: #EBE3D7;
   --foreground: #1a1a1a;
   --primary: #2c2c2c;
   --secondary: #666;
@@ -31,7 +31,8 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 a {
@@ -95,6 +96,7 @@ h3 {
 p {
   margin-bottom: 1rem;
   color: var(--secondary);
+  line-height: 1.5;
 }
 
 /* Layout */
@@ -118,7 +120,7 @@ p {
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: var(--background);
+  background: transparent;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -307,11 +309,12 @@ p {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--nav-height));
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -322,22 +325,16 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: 1;
 }
 
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: -1;
+  display: none;
 }
 
 .hero .container {
   position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 
 .hero-title {
@@ -352,6 +349,46 @@ p {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: rgba(255, 255, 255, 0.85);
   max-width: 600px;
+}
+
+/* Artist Intro Section */
+.artist-intro {
+  padding: 5rem 0 3rem;
+}
+
+.artist-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.artist-intro-name {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.artist-intro-bio {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--secondary);
+  margin: 0;
+}
+
+.artist-intro-divider {
+  margin-top: 3rem;
+  height: 1px;
+  background: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .artist-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 /* Series Section */
@@ -390,8 +427,10 @@ p {
 /* Artwork Card */
 .artwork-card {
   flex: 0 0 auto;
-  width: 280px;
+  width: auto;
   scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
 }
 
 .artwork-card:hover .artwork-image img {
@@ -400,17 +439,21 @@ p {
 
 .artwork-image {
   position: relative;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  background: #a8a8a8;
+  height: 350px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: transparent;
   margin-bottom: 1rem;
   cursor: pointer;
 }
 
 .artwork-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   transition: transform var(--transition);
 }
 

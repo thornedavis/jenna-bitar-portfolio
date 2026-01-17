@@ -62,6 +62,21 @@ export default function HomeClient({ collections, settings }) {
                 </div>
             </section>
 
+            {/* Artist Intro Section */}
+            <section className="artist-intro">
+                <div className="container">
+                    <div className="artist-intro-grid">
+                        <p className="artist-intro-bio">
+                            Jenna Bitar is a Bali-based contemporary artist of French-Lebanese origin. Having moved to the island at a young age, she has spent most of her life immersed in the rich textures, vibrant colors, and spiritual rhythms of Indonesian culture. Her work explores the intersection of color, texture, and emotion through various mediums including oil painting, acrylics, and mixed media.
+                        </p>
+                        <p className="artist-intro-bio">
+                            Drawing inspiration from Bali's natural landscapes, organic forms, and the subtle interplay of light and shadow, each piece invites contemplation and connection. Her practice is rooted in a deep reverence for the natural world and the ways in which materials can evoke memory, sensation, and feeling—inviting viewers to pause and discover the quiet beauty within each composition.
+                        </p>
+                    </div>
+                    <div className="artist-intro-divider"></div>
+                </div>
+            </section>
+
             <section style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
                 {series.map((s) => (
                     <SeriesSection
