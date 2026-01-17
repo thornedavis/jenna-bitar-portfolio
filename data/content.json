@@ -3,7 +3,7 @@
         "name": "Jenna Bitar",
         "tagline": "Contemporary Artist",
         "shortBio": "Jenna Bitar is a contemporary artist whose work explores the intersection of color, texture, and emotion through various mediums including oil painting, acrylics, and mixed media.",
-        "fullBio": "Jenna Bitar (born 1990) is a contemporary artist whose intuitive works feature layered compositions that blend abstraction with representation. Her practice explores the relationship between color, texture, and emotional resonance, creating works that invite contemplation and connection.\n\nWith an ever-evolving palette and process, Jenna enjoys experimenting with new materials and techniques, allowing the canvas to become a space for presence and poetic tension. Her work has been featured in galleries across the region and is held in private collections worldwide.",
+        "fullBio": "Jenna Bitar's practice investigates the relationship between intuition, environment, and human agency through abstract painting. Her work is rooted in the belief that perception, emotion, and decision-making are shaped by the environments we inhabit, both natural and constructed. Rather than treating intuition as an abstract or spiritual phenomenon, she approaches it as a learned sensitivity, developed through sustained exposure to place, material, and sensory experience.\n\nWorking primarily with abstraction, Bitar creates paintings that operate as aerial and psychological landscapes. Her compositions draw from recurring organic patterns found across scales of nature, from cellular structures and leaf veins to river systems and geological formations. These repeated structures function as visual evidence of underlying systems that influence human behavior beyond conscious control.\n\nMateriality plays a central role in her process. Bitar works with a combination of acrylics and self-made organic pigments derived from natural elements such as plant matter, minerals, and water. The process is responsive rather than directive, allowing material behavior and environmental conditions to inform each work. This approach positions the artist not as a controller of outcome, but as a mediator between material, memory, and place.\n\nAcross her practice, Bitar explores themes of free will, impermanence, intimacy, and origin. Her work proposes that identity and agency emerge through continuous interaction with environment, challenging the notion of autonomy as something separate from the natural systems that shape us.",
         "profileImage": "/images/profile.jpg"
     },
     "cv": {
@@ -16,39 +16,125 @@
         ],
         "soloExhibitions": [
             {
+                "year": "2026",
+                "title": "Private Choice",
+                "venue": "Curated by Nadia Candet, Paris, France"
+            },
+            {
+                "year": "2025",
+                "title": "Source",
+                "venue": "Collaboration with NESR Dubai, UAE"
+            },
+            {
+                "year": "2025",
+                "title": "Botanique",
+                "venue": "Art Korero, The One & Only, Dubai, UAE"
+            },
+            {
                 "year": "2024",
-                "title": "New Horizons",
-                "venue": "Gallery One, New York"
+                "title": "Eat My Art",
+                "venue": "Sensorial Studio Exhibition"
             },
             {
                 "year": "2023",
-                "title": "Inner Landscapes",
-                "venue": "Art Space, Los Angeles"
+                "title": "A Name You Whisper",
+                "venue": "Dubai, UAE"
+            },
+            {
+                "year": "2023",
+                "title": "An Ode to Free Will",
+                "venue": "New York, USA"
             }
         ],
         "groupExhibitions": [
             {
                 "year": "2024",
-                "title": "Collective Vision",
-                "venue": "Modern Art Center"
-            },
-            {
-                "year": "2023",
-                "title": "Emerging Artists",
-                "venue": "City Gallery"
+                "title": "Anima Mundi",
+                "venue": "Rainbow Studios, Sydney, Australia"
             }
         ],
-        "awards": [
+        "collaborations": [
+            {
+                "year": "2025",
+                "title": "Maison Margiela",
+                "description": "Walk from the Garden Video collaboration filmed in artist's studio, incorporating organic elements reflective of the fragrance ingredients for the REPLICA series"
+            },
+            {
+                "year": "2025",
+                "title": "Jotun Paints, Dubai",
+                "description": "Exploring the philosophy of colour through artistic practice"
+            },
             {
                 "year": "2024",
-                "title": "Emerging Artist Grant"
+                "title": "Two FT, Love",
+                "description": "Collaborative artwork reflecting emotional intimacy and shared process"
             }
         ],
         "press": [
             {
+                "year": "2025",
+                "title": "Memories of a City, Video Collaboration",
+                "publication": "Maison Margiela",
+                "url": "#"
+            },
+            {
+                "year": "2025",
+                "title": "How Jenna Bitar Turned a One-Off Painting into an International Art Career",
+                "publication": "Mlle World",
+                "url": "#"
+            },
+            {
+                "year": "2025",
+                "title": "French-Lebanese Artist Jenna Bitar Debuts \"Botanique\" in Dubai",
+                "publication": "Madame Arabia",
+                "url": "#"
+            },
+            {
+                "year": "2025",
+                "title": "Jenna Bitar's Sensorial Ode to Summer",
+                "publication": "Marie Claire Maison Arabia",
+                "url": "#"
+            },
+            {
+                "year": "2025",
+                "title": "Creating Environments That Actively Contribute to Healing",
+                "publication": "Interior Design",
+                "url": "#"
+            },
+            {
+                "year": "2025",
+                "title": "Creative Talks: Jenna Bitar Blends Soil, Scent, and Soul",
+                "publication": "Khamsa",
+                "url": "#"
+            },
+            {
+                "year": "2025",
+                "title": "Mojeh Sits Down with Artist Jenna Bitar to Trace Her Intuitive Journey",
+                "publication": "Mojeh Magazine",
+                "url": "#"
+            },
+            {
                 "year": "2024",
-                "title": "Artist Spotlight: Jenna Bitar",
-                "publication": "Art Magazine",
+                "title": "Artwork Feature (August)",
+                "publication": "House & Garden UK",
+                "url": "#"
+            },
+            {
+                "year": "2024",
+                "title": "Artwork Feature (September)",
+                "publication": "House & Garden UK",
+                "url": "#"
+            },
+            {
+                "year": "2024",
+                "title": "Artist Interview (January)",
+                "publication": "Rainbow Studios",
+                "url": "#"
+            },
+            {
+                "year": "2024",
+                "title": "Jenna Bitar's Aspirations (June)",
+                "publication": "Two FT",
                 "url": "#"
             }
         ]

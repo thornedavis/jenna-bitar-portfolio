@@ -1,5 +1,5 @@
 :root {
-  --background: #CAC1B2;
+  --background: #E6E0D5;
   --foreground: #1a1a1a;
   --primary: #2c2c2c;
   --secondary: #666;
@@ -75,12 +75,12 @@ body {
   pointer-events: none;
   z-index: -1;
   background:
-    radial-gradient(ellipse 80% 20% at 20% 10%, rgba(175, 165, 150, 0.5) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 15% at 80% 25%, rgba(185, 175, 160, 0.45) 0%, transparent 45%),
-    radial-gradient(ellipse 70% 25% at 40% 45%, rgba(170, 160, 145, 0.5) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 20% at 90% 60%, rgba(180, 170, 155, 0.45) 0%, transparent 40%),
-    radial-gradient(ellipse 90% 15% at 10% 75%, rgba(190, 180, 165, 0.4) 0%, transparent 45%),
-    radial-gradient(ellipse 40% 30% at 60% 90%, rgba(165, 155, 140, 0.5) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 20% at 20% 10%, rgba(245, 243, 240, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 15% at 80% 25%, rgba(248, 246, 243, 0.55) 0%, transparent 45%),
+    radial-gradient(ellipse 70% 25% at 40% 45%, rgba(242, 240, 237, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 20% at 90% 60%, rgba(246, 244, 241, 0.55) 0%, transparent 40%),
+    radial-gradient(ellipse 90% 15% at 10% 75%, rgba(250, 248, 245, 0.5) 0%, transparent 45%),
+    radial-gradient(ellipse 40% 30% at 60% 90%, rgba(240, 238, 235, 0.6) 0%, transparent 50%);
 }
 
 a {
@@ -692,12 +692,13 @@ p {
 .about-bio {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .about-bio p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--foreground);
 }
 
 .cv-section {
@@ -719,8 +720,19 @@ p {
 }
 
 .cv-item {
+  display: flex;
   padding: 0.5rem 0;
   font-size: 0.95rem;
+}
+
+.cv-item-year {
+  flex-shrink: 0;
+  width: 55px;
+  margin-right: 0.5rem;
+}
+
+.cv-item-content {
+  flex: 1;
 }
 
 .cv-item a:hover {

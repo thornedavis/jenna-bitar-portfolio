@@ -60,7 +60,7 @@ function ContactForm() {
             <div className={styles.contactContainer}>
                 {/* Left side - Form */}
                 <div className={styles.formSection}>
-                    <h1 className={styles.title}>Request Form</h1>
+                    <h1 className={styles.title}>Contact</h1>
                     <p className={styles.description}>
                         This form does not commit you to a purchase, it simply lets us know you're interested,
                         and we'll get back to you personally with next steps.
