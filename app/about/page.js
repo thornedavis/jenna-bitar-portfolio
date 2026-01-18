@@ -1,9 +1,24 @@
+import Image from 'next/image';
 import contentData from '@/data/content.json';
 
 export const metadata = {
     title: 'About | Jenna Bitar',
     description: 'Learn more about artist Jenna Bitar, including biography, exhibitions, and awards.',
 };
+
+// Brand logos data
+const brandLogos = [
+    { name: 'Maison Margiela', src: '/images/jenna-bitar-art-maison-margiela-logo.svg' },
+    { name: 'House & Garden', src: '/images/jenna-bitar-art-house-and-garden-logo.svg' },
+    { name: 'Marie Claire', src: '/images/jenna-bitar-art-marie-claire-logo.svg' },
+    { name: 'Mojeh', src: '/images/jenna-bitar-art-mojeh-logo.svg' },
+    { name: 'One & Only Dubai', src: '/images/jenna-bitar-art-one-and-only-dubai-logo.svg' },
+    { name: 'Mille', src: '/images/jenna-bitar-art-mille-logo.svg' },
+    { name: 'Art Korero', src: '/images/jenna-bitar-art-art-korero-logo.svg' },
+    { name: 'Khamsa', src: '/images/jenna-bitar-art-khamsa-logo.svg' },
+    { name: 'Rainbow Studios', src: '/images/jenna-bitar-art-rainbow-studioes-logo.svg' },
+    { name: 'Madame Arabia', src: '/images/jenna-bitar-art-madame-arabia-logo.svg' },
+];
 
 export default function About() {
     const { artist, cv } = contentData;
@@ -28,36 +43,22 @@ export default function About() {
                     <div style={{
                         borderBottom: '1px solid var(--foreground)',
                     }} />
-                    <div style={{
-                        marginTop: '2rem',
-                        marginBottom: '2rem',
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(5, 1fr)',
-                        gap: '2rem 1rem',
-                        alignItems: 'center',
-                        justifyItems: 'center',
-                    }}>
-                        {/* Placeholder logos - replace with actual brand images */}
-                        {[
-                            'Maison Margiela', 'Jotun', 'House & Garden', 'Marie Claire', 'Mojeh',
-                            'Interior Design', 'Khamsa', 'Rainbow Studios', 'Two FT', 'Madame Arabia'
-                        ].map((brand, index) => (
-                            <div
-                                key={index}
-                                style={{
-                                    width: '100px',
-                                    height: '60px',
-                                    background: '#d0d0d0',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '0.65rem',
-                                    color: '#666',
-                                    textAlign: 'center',
-                                    padding: '0.5rem',
-                                }}
-                            >
-                                {brand}
+                    <div className="brand-logos-grid">
+                        {brandLogos.map((brand, index) => (
+                            <div key={index} className="brand-logo-item">
+                                <Image
+                                    src={brand.src}
+                                    alt={brand.name}
+                                    width={100}
+                                    height={50}
+                                    style={{
+                                        objectFit: 'contain',
+                                        width: '100%',
+                                        height: 'auto',
+                                        maxHeight: '50px',
+                                        filter: 'brightness(0) invert(9%)',
+                                    }}
+                                />
                             </div>
                         ))}
                     </div>
@@ -70,11 +71,7 @@ export default function About() {
                 }} />
 
                 {/* Two-column layout: Bio left, CV right */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '4rem',
-                }}>
+                <div className="about-content-grid">
                     {/* Left column: About/Bio */}
                     <div>
                         <h3 className="cv-title">About</h3>
