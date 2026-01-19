@@ -1,8 +1,10 @@
-'use client';
+import StudioPage from './StudioPage';
 
-import { NextStudio } from 'next-sanity/studio';
-import config from '@/sanity.config';
+// Required for static export - pre-generate the base /admin route
+export function generateStaticParams() {
+    return [{ tool: [] }];
+}
 
 export default function AdminStudioPage() {
-    return <NextStudio config={config} />;
+    return <StudioPage />;
 }
