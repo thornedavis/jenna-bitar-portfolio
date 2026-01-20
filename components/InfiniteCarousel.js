@@ -20,9 +20,6 @@ export default function InfiniteCarousel({ artworks, seriesName, onArtworkClick 
         });
     };
 
-    // Duplicate artworks for seamless loop effect
-    const duplicatedArtworks = [...artworks, ...artworks, ...artworks];
-
     return (
         <section className={styles.section}>
             <div className={styles.header}>
@@ -46,8 +43,8 @@ export default function InfiniteCarousel({ artworks, seriesName, onArtworkClick 
             </div>
             <div className={styles.carousel} ref={scrollRef}>
                 <div className={styles.scrollContent}>
-                    {duplicatedArtworks.map((artwork, index) => (
-                        <div key={`${artwork._id || artwork.id}-${index}`} className={styles.cardWrapper}>
+                    {artworks.map((artwork) => (
+                        <div key={artwork._id || artwork.id} className={styles.cardWrapper}>
                             <ArtworkCard
                                 artwork={artwork}
                                 onClick={onArtworkClick}
