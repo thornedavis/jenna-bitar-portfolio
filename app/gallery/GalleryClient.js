@@ -1,12 +1,57 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import InfiniteCarousel from '@/components/InfiniteCarousel';
 import ArtworkModal from '@/components/ArtworkModal';
+import { client } from '@/lib/sanity';
 
-export default function GalleryClient({ collections }) {
+// Query to fetch collections with artworks
+const collectionsQuery = `
+    *[_type == "collection"] | order(order asc) {
+        _id,
+        name,
+        "slug": slug.current,
+        description,
+        order,
+        "artworks": *[_type == "artwork" && references(^._id)] | order(order asc) {
+            _id,
+            title,
+            "slug": slug.current,
+            "image": images[0],
+            images,
+            dimensions,
+            medium,
+            year,
+            available,
+            description,
+            artworkInformation,
+            framing,
+            shipping,
+            order
+        }
+    }
+`;
+
+export default function GalleryClient() {
+    const [collections, setCollections] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [selectedArtwork, setSelectedArtwork] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        async function fetchCollections() {
+            try {
+                const data = await client.fetch(collectionsQuery);
+                setCollections(data || []);
+            } catch (error) {
+                console.error('Error fetching collections:', error);
+                setCollections([]);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchCollections();
+    }, []);
 
     const handleArtworkClick = (artwork) => {
         setSelectedArtwork(artwork);
@@ -24,6 +69,15 @@ export default function GalleryClient({ collections }) {
         name: collection.name,
         artworks: collection.artworks || [],
     }));
+
+    if (loading) {
+        return (
+            <div className="page">
+                <h1 style={{ padding: '0 4rem', marginBottom: '3rem' }}>Gallery</h1>
+                <div style={{ padding: '0 4rem', color: '#888' }}>Loading...</div>
+            </div>
+        );
+    }
 
     return (
         <div className="page">

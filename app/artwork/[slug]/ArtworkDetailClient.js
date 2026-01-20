@@ -1,23 +1,92 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import ImageCarousel from '@/components/ImageCarousel';
 import Accordion from '@/components/Accordion';
+import { client } from '@/lib/sanity';
 import styles from './ArtworkDetail.module.css';
 
-export default function ArtworkDetailClient({ artwork }) {
+// Query to fetch artwork by slug
+const artworkQuery = `
+    *[_type == "artwork" && slug.current == $slug][0] {
+        _id,
+        title,
+        "slug": slug.current,
+        images,
+        dimensions,
+        medium,
+        year,
+        available,
+        description,
+        artworkInformation,
+        framing,
+        shipping,
+        "collection": collection->{
+            _id,
+            name,
+            "slug": slug.current
+        }
+    }
+`;
+
+export default function ArtworkDetailClient() {
+    const params = useParams();
     const router = useRouter();
+    const [artwork, setArtwork] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [openAccordion, setOpenAccordion] = useState(null);
 
+    useEffect(() => {
+        async function fetchArtwork() {
+            if (!params.slug) return;
+
+            try {
+                const data = await client.fetch(artworkQuery, { slug: params.slug });
+                setArtwork(data);
+            } catch (error) {
+                console.error('Error fetching artwork:', error);
+                setArtwork(null);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchArtwork();
+    }, [params.slug]);
+
     const handleRequest = () => {
-        router.push(`/contact?painting=${encodeURIComponent(artwork.title)}`);
+        if (artwork) {
+            router.push(`/contact?painting=${encodeURIComponent(artwork.title)}`);
+        }
     };
 
     const handleAccordionToggle = (accordionId) => {
         setOpenAccordion(openAccordion === accordionId ? null : accordionId);
     };
+
+    if (loading) {
+        return (
+            <div className={styles.page}>
+                <Link href="/gallery" className={styles.backLink}>
+                    &lt; Back to gallery
+                </Link>
+                <div style={{ padding: '2rem', color: '#888' }}>Loading...</div>
+            </div>
+        );
+    }
+
+    if (!artwork) {
+        return (
+            <div className={styles.page}>
+                <Link href="/gallery" className={styles.backLink}>
+                    &lt; Back to gallery
+                </Link>
+                <div style={{ padding: '2rem' }}>Artwork not found</div>
+            </div>
+        );
+    }
 
     return (
         <div className={styles.page}>

@@ -1,13 +1,78 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import SeriesSection from '@/components/SeriesSection';
 import ArtworkModal from '@/components/ArtworkModal';
+import { client } from '@/lib/sanity';
 
-export default function HomeClient({ collections, settings }) {
+// Query to fetch collections with artworks
+const collectionsQuery = `
+    *[_type == "collection"] | order(order asc) {
+        _id,
+        name,
+        "slug": slug.current,
+        description,
+        order,
+        "artworks": *[_type == "artwork" && references(^._id)] | order(order asc) {
+            _id,
+            title,
+            "slug": slug.current,
+            "image": images[0],
+            images,
+            dimensions,
+            medium,
+            year,
+            available,
+            description,
+            artworkInformation,
+            framing,
+            shipping,
+            order
+        }
+    }
+`;
+
+// Query to fetch site settings
+const settingsQuery = `
+    *[_type == "siteSettings"][0] {
+        artistName,
+        tagline,
+        shortBio,
+        fullBio,
+        profileImage,
+        email,
+        instagram,
+        instagramUrl
+    }
+`;
+
+export default function HomeClient() {
+    const [collections, setCollections] = useState([]);
+    const [settings, setSettings] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [selectedArtwork, setSelectedArtwork] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const [collectionsData, settingsData] = await Promise.all([
+                    client.fetch(collectionsQuery),
+                    client.fetch(settingsQuery),
+                ]);
+                setCollections(collectionsData || []);
+                setSettings(settingsData || {});
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                setCollections([]);
+                setSettings({});
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchData();
+    }, []);
 
     const handleArtworkClick = (artwork) => {
         setSelectedArtwork(artwork);
@@ -58,13 +123,17 @@ export default function HomeClient({ collections, settings }) {
             </section>
 
             <section style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
-                {series.map((s) => (
-                    <SeriesSection
-                        key={s.id}
-                        series={s}
-                        onArtworkClick={handleArtworkClick}
-                    />
-                ))}
+                {loading ? (
+                    <div style={{ padding: '0 4rem', color: '#888' }}>Loading artworks...</div>
+                ) : (
+                    series.map((s) => (
+                        <SeriesSection
+                            key={s.id}
+                            series={s}
+                            onArtworkClick={handleArtworkClick}
+                        />
+                    ))
+                )}
             </section>
 
             <section style={{ padding: '6rem 0' }}>

@@ -1,37 +1,25 @@
-import { getArtworkBySlug, getAllArtworkSlugs } from '@/lib/sanity';
+import { getAllArtworkSlugs } from '@/lib/sanity';
 import ArtworkDetailClient from './ArtworkDetailClient';
-import { notFound } from 'next/navigation';
 
-// Generate static params for all artworks
+// Pre-generate all artwork pages at build time for static export
+// The client component will still fetch fresh data when the page loads
 export async function generateStaticParams() {
-    const artworks = await getAllArtworkSlugs();
-    return artworks.map((artwork) => ({
-        slug: artwork.slug,
-    }));
+    try {
+        const artworks = await getAllArtworkSlugs();
+        return artworks.map((artwork) => ({
+            slug: artwork.slug,
+        }));
+    } catch (error) {
+        console.error('Error fetching artwork slugs:', error);
+        return [];
+    }
 }
 
-// Generate metadata for SEO
-export async function generateMetadata({ params }) {
-    const { slug } = await params;
-    const artwork = await getArtworkBySlug(slug);
+export const metadata = {
+    title: 'Artwork | Jenna Bitar',
+    description: 'View artwork details by Jenna Bitar',
+};
 
-    if (!artwork) {
-        return { title: 'Artwork Not Found' };
-    }
-
-    return {
-        title: `${artwork.title} | Jenna Bitar`,
-        description: artwork.description?.substring(0, 160) || `${artwork.title} - ${artwork.medium}`,
-    };
-}
-
-export default async function ArtworkPage({ params }) {
-    const { slug } = await params;
-    const artwork = await getArtworkBySlug(slug);
-
-    if (!artwork) {
-        notFound();
-    }
-
-    return <ArtworkDetailClient artwork={artwork} />;
+export default function ArtworkPage() {
+    return <ArtworkDetailClient />;
 }
