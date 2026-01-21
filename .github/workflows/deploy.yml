@@ -31,9 +31,12 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
           NEXT_PUBLIC_SANITY_PROJECT_ID: sfy3tmyk
           NEXT_PUBLIC_SANITY_DATASET: production
           NEXT_PUBLIC_SANITY_API_VERSION: "2024-01-01"
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
