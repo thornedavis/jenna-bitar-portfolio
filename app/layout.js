@@ -1,6 +1,8 @@
 import { Inter, Averia_Serif_Libre } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
+// Original Navigation - swap back if needed:
+// import Navigation from "@/components/Navigation";
+import Navigation from "@/components/NavigationAlt";
 import Footer from "@/components/Footer";
 
 const inter = Inter({

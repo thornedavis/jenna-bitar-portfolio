@@ -32,10 +32,19 @@ export default function About() {
                 {/* Full-width hero image */}
                 <div style={{
                     width: '100%',
-                    height: '400px',
-                    background: '#a8a8a8',
                     marginBottom: '3rem',
-                }} />
+                    overflow: 'hidden',
+                }}>
+                    <img
+                        src="/images/jenna-bitar-art-about-image.webp"
+                        alt="Jenna Bitar in her studio"
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            display: 'block',
+                        }}
+                    />
+                </div>
 
                 {/* Brand Logos Section */}
                 <div style={{ marginBottom: '3rem' }}>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-export default function Navigation() {
+export default function NavigationAlt() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,12 +14,16 @@ export default function Navigation() {
         return null;
     }
 
-    const menuLinks = [
-        { href: '/', label: 'Home' },
+    const navLinks = [
         { href: '/gallery', label: 'Gallery' },
         { href: '/commissions', label: 'Commissions' },
         { href: '/about', label: 'About' },
         { href: '/contact', label: 'Contact' },
+    ];
+
+    const menuLinks = [
+        { href: '/', label: 'Home' },
+        ...navLinks,
     ];
 
     const handleLinkClick = () => {
@@ -28,40 +32,44 @@ export default function Navigation() {
 
     return (
         <>
-            <nav className="nav">
-                <button
-                    className="nav-menu-btn"
-                    onClick={() => setIsMenuOpen(true)}
-                >
-                    {isMenuOpen ? 'Close' : 'Menu'}
-                </button>
-
-                <Link href="/" className="nav-logo-center">
+            <nav className="nav-alt">
+                {/* Logo on the left */}
+                <Link href="/" className="nav-alt-logo">
                     <Image
                         src="/images/jenna-bitar-art-logo.webp"
                         alt="Jenna Bitar"
-                        width={160}
-                        height={53}
+                        width={140}
+                        height={47}
                         priority
                     />
                 </Link>
 
-                <Link href="/contact" className="nav-contact-btn">
-                    Contact
-                </Link>
+                {/* Navigation links - visible on desktop, hidden on tablet/mobile */}
+                <div className="nav-alt-links">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`nav-alt-link ${pathname === link.href ? 'active' : ''}`}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Hamburger menu button - visible on tablet/mobile, on the right */}
+                <button
+                    className="nav-alt-menu-btn"
+                    onClick={() => setIsMenuOpen(true)}
+                >
+                    Menu
+                </button>
             </nav>
 
-            {/* Full-screen menu overlay */}
+            {/* Full-screen menu overlay - for tablet/mobile */}
             <div className={`menu-overlay ${isMenuOpen ? 'open' : ''}`}>
-                <nav className="nav">
-                    <button
-                        className="nav-menu-btn"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Close
-                    </button>
-
-                    <Link href="/" className="nav-logo-center" onClick={handleLinkClick}>
+                <nav className="nav-alt">
+                    <Link href="/" className="nav-alt-logo" onClick={handleLinkClick}>
                         <Image
                             src="/images/jenna-bitar-art-logo.webp"
                             alt="Jenna Bitar"
@@ -71,9 +79,17 @@ export default function Navigation() {
                         />
                     </Link>
 
-                    <Link href="/contact" className="nav-contact-btn" onClick={handleLinkClick}>
-                        Contact
-                    </Link>
+                    {/* Empty spacer for layout balance - hidden on mobile */}
+                    <div className="nav-alt-links" style={{ visibility: 'hidden' }}>
+                        <span>Contact</span>
+                    </div>
+
+                    <button
+                        className="nav-alt-menu-btn"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Close
+                    </button>
                 </nav>
 
                 <div className="menu-content">

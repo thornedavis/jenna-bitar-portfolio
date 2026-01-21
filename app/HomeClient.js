@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import SeriesSection from '@/components/SeriesSection';
 import ArtworkModal from '@/components/ArtworkModal';
+import FeatureCarousel from '@/components/FeatureCarousel';
 import { client } from '@/lib/sanity';
 
 // Query to fetch collections with artworks
@@ -112,10 +113,10 @@ export default function HomeClient() {
                 <div className="container">
                     <div className="artist-intro-grid">
                         <p className="artist-intro-bio">
-                            Jenna Bitar is a Bali-based contemporary artist of French-Lebanese origin. Having moved to the island at a young age, she has spent most of her life immersed in the rich textures, vibrant colors, and spiritual rhythms of Indonesian culture. Her work explores the intersection of color, texture, and emotion through various mediums including oil painting, acrylics, and mixed media.
+                            Jenna is a contemporary abstract artist raised and based in Bali, where nature is both her studio and her greatest source of inspiration. Having grown up immersed in the island's elemental landscapes and spiritual rhythms, her work is shaped by a deep connection to the natural world and the patterns that quietly govern it. She works with mixed media often creating her own materials from organic derivatives such as seeds, natural inks, clay, sand, volcanic ash, tea, and leaf tints allowing the earth itself to become part of each composition.
                         </p>
                         <p className="artist-intro-bio">
-                            Drawing inspiration from Bali's natural landscapes, organic forms, and the subtle interplay of light and shadow, each piece invites contemplation and connection. Her practice is rooted in a deep reverence for the natural world and the ways in which materials can evoke memory, sensation, and feeling—inviting viewers to pause and discover the quiet beauty within each composition.
+                            Her practice explores patterns found across the micro and macrocosm, from the veins of a leaf to the lines of dried canyons and the ripples left by wind and water. These natural repetitions speak to a deeper meaning and order within life, forming the foundation of her visual language. Through layered textures and meditative forms, Jenna creates contemplative works that invite stillness, reflection, and a gentle reconnection to the rhythms of nature.
                         </p>
                     </div>
                     <div className="artist-intro-divider"></div>
@@ -136,40 +137,7 @@ export default function HomeClient() {
                 )}
             </section>
 
-            <section style={{ padding: '6rem 0' }}>
-                <div className="container">
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gap: '4rem',
-                        minHeight: '500px'
-                    }}>
-                        <div style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'flex-end',
-                            paddingBottom: '2rem'
-                        }}>
-                            <h2 style={{ marginBottom: '1.5rem' }}>About the Artist</h2>
-                            <p style={{ marginBottom: '1.5rem', maxWidth: '450px' }}>{settings?.shortBio || ''}</p>
-                            <Link href="/about" className="text-link">
-                                Find out more →
-                            </Link>
-                        </div>
-                        <div style={{
-                            background: '#a8a8a8',
-                            width: '100%',
-                            height: '500px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#666'
-                        }}>
-                            Artist Photo
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <FeatureCarousel />
 
             <ArtworkModal
                 artwork={selectedArtwork}

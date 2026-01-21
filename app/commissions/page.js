@@ -1,34 +1,20 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import contentData from '@/data/content.json';
-import styles from './contact.module.css';
+import { useState, Suspense } from 'react';
+import styles from './commissions.module.css';
 
-function ContactForm() {
-    const searchParams = useSearchParams();
-    const { contact } = contentData;
-
+function CommissionsForm() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        painting: '',
+        projectType: '',
         location: '',
-        notes: ''
+        budget: '',
+        timeline: '',
+        description: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
-
-    // Pre-fill painting field from URL parameter
-    useEffect(() => {
-        const paintingParam = searchParams.get('painting');
-        if (paintingParam) {
-            setFormData(prev => ({
-                ...prev,
-                painting: paintingParam
-            }));
-        }
-    }, [searchParams]);
 
     const handleChange = (e) => {
         setFormData({
@@ -43,7 +29,7 @@ function ContactForm() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('/api/commissions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -59,12 +45,14 @@ function ContactForm() {
             setFormData({
                 name: '',
                 email: '',
-                painting: '',
+                projectType: '',
                 location: '',
-                notes: ''
+                budget: '',
+                timeline: '',
+                description: ''
             });
         } catch (error) {
-            console.error('Contact form error:', error);
+            console.error('Commission form error:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
@@ -76,10 +64,10 @@ function ContactForm() {
             <div className={styles.contactContainer}>
                 {/* Left side - Form */}
                 <div className={styles.formSection}>
-                    <h1 className={styles.title}>Contact</h1>
+                    <h1 className={styles.title}>Commissions</h1>
                     <p className={styles.description}>
-                        This form does not commit you to a purchase, it simply lets us know you're interested,
-                        and we'll get back to you personally with next steps.
+                        Interested in commissioning a custom piece? Fill out the form below to share your vision,
+                        and I'll be in touch to discuss how we can bring it to life.
                     </p>
 
                     <form className={styles.form} onSubmit={handleSubmit}>
@@ -110,36 +98,77 @@ function ContactForm() {
                         </div>
 
                         <div className={styles.formField}>
-                            <label htmlFor="painting" className={styles.label}>Which painting are you interested in?</label>
-                            <input
-                                type="text"
-                                id="painting"
-                                name="painting"
-                                value={formData.painting}
+                            <label htmlFor="projectType" className={styles.label}>Is this for a business or personal home?</label>
+                            <select
+                                id="projectType"
+                                name="projectType"
+                                value={formData.projectType}
                                 onChange={handleChange}
-                                className={styles.input}
-                            />
+                                required
+                                className={styles.select}
+                            >
+                                <option value="">Select an option</option>
+                                <option value="personal">Personal / Home</option>
+                                <option value="business">Business / Commercial</option>
+                                <option value="gift">Gift for someone</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
 
                         <div className={styles.formField}>
-                            <label htmlFor="location" className={styles.label}>Where are you based?</label>
+                            <label htmlFor="location" className={styles.label}>Where are you located?</label>
                             <input
                                 type="text"
                                 id="location"
                                 name="location"
                                 value={formData.location}
                                 onChange={handleChange}
+                                placeholder="City, Country"
                                 className={styles.input}
                             />
                         </div>
 
                         <div className={styles.formField}>
-                            <label htmlFor="notes" className={styles.label}>Do you have any questions or notes?</label>
-                            <textarea
-                                id="notes"
-                                name="notes"
-                                value={formData.notes}
+                            <label htmlFor="budget" className={styles.label}>What is your budget range?</label>
+                            <select
+                                id="budget"
+                                name="budget"
+                                value={formData.budget}
                                 onChange={handleChange}
+                                required
+                                className={styles.select}
+                            >
+                                <option value="">Select a range</option>
+                                <option value="under-2500">Under $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="10000-25000">$10,000 - $25,000</option>
+                                <option value="over-25000">$25,000+</option>
+                                <option value="flexible">Flexible / Not sure</option>
+                            </select>
+                        </div>
+
+                        <div className={styles.formField}>
+                            <label htmlFor="timeline" className={styles.label}>Do you have a timeline in mind?</label>
+                            <input
+                                type="text"
+                                id="timeline"
+                                name="timeline"
+                                value={formData.timeline}
+                                onChange={handleChange}
+                                placeholder="e.g., 3 months, No rush, By December"
+                                className={styles.input}
+                            />
+                        </div>
+
+                        <div className={styles.formField}>
+                            <label htmlFor="description" className={styles.label}>Tell me about your vision</label>
+                            <textarea
+                                id="description"
+                                name="description"
+                                value={formData.description}
+                                onChange={handleChange}
+                                placeholder="Describe the piece you're envisioning – size, colors, style, subject matter, or any inspiration..."
                                 className={styles.textarea}
                             />
                         </div>
@@ -154,7 +183,7 @@ function ContactForm() {
 
                         {submitStatus === 'success' && (
                             <p className={styles.successMessage}>
-                                Thank you for your request! We'll be in touch soon.
+                                Thank you for your commission inquiry! I'll review your request and be in touch soon.
                             </p>
                         )}
 
@@ -169,8 +198,8 @@ function ContactForm() {
                 {/* Right side - Image */}
                 <div className={styles.imageSection}>
                     <img
-                        src="/images/jenna-bitar-art-contact.webp"
-                        alt="Jenna Bitar Art Studio"
+                        src="/images/jenna-bitar-art-commission-image.webp"
+                        alt="Jenna Bitar Art Commission"
                         className={styles.contactImage}
                     />
                 </div>
@@ -179,11 +208,11 @@ function ContactForm() {
     );
 }
 
-// Wrap in Suspense for useSearchParams
-export default function Contact() {
+// Wrap in Suspense for consistency
+export default function Commissions() {
     return (
         <Suspense fallback={<div className="page">Loading...</div>}>
-            <ContactForm />
+            <CommissionsForm />
         </Suspense>
     );
 }
