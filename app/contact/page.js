@@ -50,8 +50,9 @@ function ContactForm() {
                 },
                 body: JSON.stringify({
                     access_key: '35d540d7-86c7-4dbb-8579-4689ca55727d',
-                    subject: `New Inquiry: ${formData.painting || 'General Contact'}`,
+                    subject: `[Contact Form] New Inquiry: ${formData.painting || 'General'}`,
                     from_name: 'Jenna Bitar Website',
+                    form_type: 'Contact Form',
                     ...formData,
                 }),
             });

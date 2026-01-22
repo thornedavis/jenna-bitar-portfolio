@@ -36,8 +36,9 @@ function CommissionsForm() {
                 },
                 body: JSON.stringify({
                     access_key: '35d540d7-86c7-4dbb-8579-4689ca55727d',
-                    subject: 'New Commission Inquiry',
+                    subject: '[Commission Form] New Commission Inquiry',
                     from_name: 'Jenna Bitar Website',
+                    form_type: 'Commission Form',
                     ...formData,
                 }),
             });
