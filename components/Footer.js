@@ -16,8 +16,8 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer-links">
                 <a href="mailto:hello@jennabitar.com">hello@jennabitar.com</a>
-                <a href="https://instagram.com/jennabitar" target="_blank" rel="noopener noreferrer">
-                    @jennabitar
+                <a href="https://instagram.com/jenna.bitar.art" target="_blank" rel="noopener noreferrer">
+                    @jenna.bitar.art
                 </a>
             </div>
             <div>
