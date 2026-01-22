@@ -140,12 +140,19 @@ export default function ArtworkDetailClient() {
                         </Accordion>
                     </div>
 
-                    <button
-                        className={styles.requestButton}
-                        onClick={handleRequest}
-                    >
-                        REQUEST →
-                    </button>
+                    {artwork.available !== false ? (
+                        <button
+                            className={styles.requestButton}
+                            onClick={handleRequest}
+                        >
+                            REQUEST →
+                        </button>
+                    ) : (
+                        <div className={styles.soldIndicator}>
+                            <span className={styles.soldDot}></span>
+                            SOLD
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

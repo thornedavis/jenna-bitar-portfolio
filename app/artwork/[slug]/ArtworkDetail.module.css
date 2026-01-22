@@ -120,6 +120,26 @@
     opacity: 0.7;
 }
 
+.soldIndicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #c75a5a;
+    margin-top: 0.25rem;
+}
+
+.soldDot {
+    width: 8px;
+    height: 8px;
+    background-color: #c75a5a;
+    border-radius: 50%;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .page {
