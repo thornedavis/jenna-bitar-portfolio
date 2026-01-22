@@ -43,15 +43,21 @@ function ContactForm() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    access_key: '35d540d7-86c7-4dbb-8579-4689ca55727d',
+                    subject: `New Inquiry: ${formData.painting || 'General Contact'}`,
+                    from_name: 'Jenna Bitar Website',
+                    ...formData,
+                }),
             });
 
-            if (!response.ok) {
+            const result = await response.json();
+            if (!result.success) {
                 throw new Error('Failed to send message');
             }
 
